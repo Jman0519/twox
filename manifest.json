@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "twox",
+    "description": "speed up videos",
+    "version": "1.0",
+    "action": {
+        "default_popup": "selectSpeed.html",
+        "default_itle": "Two X"
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "scripts/twox.js"
+            ],
+            "matches": [
+                "https://www.youtube.com/watch*"
+            ]
+        }
+    ],
+    "permissions": [
+        "storage"
+    ]
+}
