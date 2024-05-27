@@ -1,5 +1,9 @@
-document.onload = main;
+document.onchange = main;
+document.onlaod = main;
+window.addEventListener("popstate", main)
 console.log("started twox");
+
+let vo;
 
 function main() {
     console.log("ran main");
@@ -48,7 +52,11 @@ function main() {
 
         updateRate();
 
-        let vo = new MutationObserver(() => {
+        if (vo) {
+            delete vo;
+        }
+
+        vo = new MutationObserver(() => {
             console.log("detected change");
             updateRate();
             if (isAdShowing()) {
